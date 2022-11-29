@@ -35,7 +35,7 @@ createApp({
             const data = {
                 index,
                 done: todo
-            }
+            };
 
             axios
                 .post("server.php", data, {
@@ -45,6 +45,23 @@ createApp({
                     this.todoList = resp.data;
                 });
         },
+
+        removeTodo(index) {
+            const remove = true;
+
+            const data = {
+                index,
+                remove,
+            };
+
+            axios
+                .post("server.php", data, {
+                    headers: { "Content-Type": "multipart/form-data" }
+                })
+                .then(resp => {
+                    this.todoList = resp.data;
+                });
+        }
     },
 
 }).mount('#app');

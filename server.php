@@ -29,6 +29,15 @@ if (isset($_POST["done"])) {
     file_put_contents("todo.json", json_encode($todo_list));
 };
 
+if (isset($_POST["remove"])) {
+    $index_position_removed = $_POST["index"];
+    $todo_removed = $_POST["remove"];
+    if ($todo_removed === 'true') {
+        unset($todo_list[$index_position_removed]);
+    };
+    file_put_contents("todo.json", json_encode($todo_list));
+};
+
 
 // alla chiamata axios restituisci todo list codificato json
 header('Content-Type: application/json');

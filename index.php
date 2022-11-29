@@ -20,12 +20,19 @@
     <div id="app">
 
         <ul>
-            <li v-for="(todo, index) in todoList" :class="todo.done ? 'done' : '' " @click="toggle(index)"> {{todo.text}} </li>
+            <li v-for="(todo, index) in todoList">
+                <span :class="todo.done ? 'done' : '' " @click="toggle(index)">
+                    {{todo.text}}
+                </span>
+                <span class="ml-5" @click="removeTodo(index)">
+                    X
+                </span>
+            </li>
         </ul>
 
 
 
-        <input type="text" placeholder="ins new todo" v-model="newTodo">
+        <input @keyup.enter="pushData" type="text" placeholder="ins new todo" v-model="newTodo">
         <button @click="pushData">invia</button>
 
 
