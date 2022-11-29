@@ -20,7 +20,7 @@
     <div id="app">
 
         <ul>
-            <li v-for="todo in todoList"> {{todo.text}} </li>
+            <li v-for="todo in todoList" :class="todo.done ? 'done' : '' "> {{todo.text}} </li>
         </ul>
 
 
