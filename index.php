@@ -20,8 +20,11 @@
     <div id="app">
 
         <ul>
-            <li v-for="todo in todoList"> {{todo}} </li>
+            <li v-for="todo in todoList"> {{todo.text}} </li>
         </ul>
+
+
+
 
     </div>
 

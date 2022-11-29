@@ -4,6 +4,7 @@ createApp({
     data() {
         return {
             todoList: [],
+            newTodo: '',
         };
     },
     created() {
