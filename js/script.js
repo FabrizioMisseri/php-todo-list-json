@@ -28,6 +28,23 @@ createApp({
                     this.newTodo = "";
                 });
         },
+
+        toggle(index) {
+            const todo = !this.todoList[index].done;
+
+            const data = {
+                index,
+                done: todo
+            }
+
+            axios
+                .post("server.php", data, {
+                    headers: { "Content-Type": "multipart/form-data" }
+                })
+                .then(resp => {
+                    this.todoList = resp.data;
+                });
+        },
     },
 
 }).mount('#app');

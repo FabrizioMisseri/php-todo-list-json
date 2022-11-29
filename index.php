@@ -20,7 +20,7 @@
     <div id="app">
 
         <ul>
-            <li v-for="todo in todoList" :class="todo.done ? 'done' : '' "> {{todo.text}} </li>
+            <li v-for="(todo, index) in todoList" :class="todo.done ? 'done' : '' " @click="toggle(index)"> {{todo.text}} </li>
         </ul>
 
 
