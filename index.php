@@ -25,6 +25,10 @@
 
 
 
+        <input type="text" placeholder="ins new todo" v-model="newTodo">
+        <button @click="pushData">invia</button>
+
+
 
     </div>
 
